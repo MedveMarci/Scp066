@@ -14,7 +14,7 @@ public class EventHandler : CustomEventsHandler
     
     public override void OnServerWaitingForPlayers()
     {
-        _ = Scp066.CheckForUpdatesAsync(Scp066.Instance.Version);
+        _ = VersionManager.CheckForUpdatesAsync(Scp066.Instance.Version);
         base.OnServerWaitingForPlayers();
     }
 }
