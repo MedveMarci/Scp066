@@ -58,7 +58,7 @@ public class Scp066Role : ExtendedRole
         {
             EffectType = "SilentWalk",
             Duration = -1,
-            Intensity = 50,
+            Intensity = 255,
             Removable = false
         }
     ];
