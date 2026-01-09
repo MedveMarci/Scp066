@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scp066", "Scp066\Scp066.csproj", "{BB705728-6A5B-428E-9E9C-78852E6E0720}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB705728-6A5B-428E-9E9C-78852E6E0720}.Debug|x64.ActiveCfg = Debug|x64
+		{BB705728-6A5B-428E-9E9C-78852E6E0720}.Debug|x64.Build.0 = Debug|x64
+		{BB705728-6A5B-428E-9E9C-78852E6E0720}.Release|x64.ActiveCfg = Release|x64
+		{BB705728-6A5B-428E-9E9C-78852E6E0720}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+EndGlobal
