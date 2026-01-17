@@ -9,14 +9,15 @@ using UncomplicatedCustomRoles.API.Features.Behaviour;
 using UncomplicatedCustomRoles.API.Features.CustomModules;
 using UncomplicatedCustomRoles.Manager;
 using UnityEngine;
+using YamlDotNet.Serialization;
 
 namespace Scp066.Features;
 
 public class Scp066Role : ExtendedRole
 {
-    public override int Id { get; set; } = 066;
-    public override string Name { get; set; } = "SCP-066";
-    public override bool OverrideRoleName { get; set; } = true;
+    [YamlIgnore] public override int Id { get; set; } = 066;
+    [YamlIgnore] public override string Name { get; set; } = "SCP-066";
+    [YamlIgnore] public override bool OverrideRoleName { get; set; } = true;
     public override string Nickname { get; set; } = null;
     public override string CustomInfo { get; set; } = "";
     public override string BadgeName { get; set; } = "";
@@ -70,10 +71,10 @@ public class Scp066Role : ExtendedRole
         "Play sounds to kill humans\n" +
         "Use abilities by clicking on the buttons</color>";
 
-    public override ushort SpawnBroadcastDuration { get; set; } = 15;
-    public override List<ItemType> Inventory { get; set; } = [];
-    public override Dictionary<ItemType, ushort> Ammo { get; set; } = [];
-    public override float DamageMultiplier { get; set; } = 0;
+    public override ushort SpawnBroadcastDuration { get; set; } = 10;
+    [YamlIgnore] public override List<ItemType> Inventory { get; set; } = [];
+    [YamlIgnore] public override Dictionary<ItemType, ushort> Ammo { get; set; } = [];
+    [YamlIgnore] public override float DamageMultiplier { get; set; } = 0;
 
     public override SpawnBehaviour SpawnSettings { get; set; } = new()
     {
@@ -98,12 +99,12 @@ public class Scp066Role : ExtendedRole
 
     public override HintConfig HintConfig { get; set; } = new()
     {
-        Text = "<align=right><size=50><color=red><b>SCP-066</b></color></size>\n" + 
-               "<size=30><color=red>Eric's Toy play sounds</color></size>\n\n" + 
-               "Abilities:\n" + 
-               "<color=%color%>\ud83c\udfb5 Eric? {0}</color>\n" + 
-               "<color=%color%>\ud83c\udfb6 Note {1}</color>\n" + 
-               "<color=%color%>\ud83c\udfba Noise {2}</color>\n" + 
+        Text = "<align=right><size=50><color=red><b>SCP-066</b></color></size>\n" +
+               "<size=30><color=red>Eric's Toy play sounds</color></size>\n\n" +
+               "Abilities:\n" +
+               "<color=%color%>\ud83c\udfb5 Eric? {0}</color>\n" +
+               "<color=%color%>\ud83c\udfb6 Note {1}</color>\n" +
+               "<color=%color%>\ud83c\udfba Noise {2}</color>\n" +
                "\n<size=18>if you cant use abilities\nremove \u2b50 in settings</size></align>",
         AvailableAbilityColor = "red",
         UnavailableAbilityColor = "#880000"
@@ -132,9 +133,8 @@ public class Scp066Role : ExtendedRole
     {
         role.AddModule(
             typeof(CustomScpAnnouncer),
-            new Dictionary<string, object> { { "name", "SCP066" } }
+            new Dictionary<string, object> { { "name", "SCP-066" } }
         );
         base.OnSpawned(role);
     }
-    
 }
