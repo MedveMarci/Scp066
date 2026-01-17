@@ -27,7 +27,7 @@
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
         <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>      
+        <Optimize>true</Optimize>
         <OutputPath>bin\x64\Release\</OutputPath>
         <PlatformTarget>x64</PlatformTarget>
         <DefineConstants>TRACE</DefineConstants>
@@ -50,23 +50,27 @@
         <Reference Include="UnityEngine.PhysicsModule" HintPath="$(SL_REFERENCES)\UnityEngine.PhysicsModule.dll"/>
         <Reference Include="UnityEngine.AnimationModule" HintPath="$(SL_REFERENCES)\UnityEngine.AnimationModule.dll"/>
         <Reference Include="Mirror" HintPath="$(SL_REFERENCES)\Mirror.dll"/>
+        <Reference Include="CommandSystem.Core" HintPath="$(SL_REFERENCES)\CommandSystem.Core.dll"/>
+        <Reference Include="NorthwoodLib" HintPath="$(SL_REFERENCES)\NorthwoodLib.dll"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Config.cs" />
-        <Compile Include="EventHandler.cs" />
-        <Compile Include="Features\Abilities\PlayEric.cs" />
-        <Compile Include="Features\Abilities\PlayNoise.cs" />
-        <Compile Include="Features\Abilities\PlayNotes.cs" />
-        <Compile Include="Features\Scp066Role.cs" />
-        <Compile Include="LogManager.cs" />
+        <Compile Include="ApiFeatures\ApiManager.cs"/>
+        <Compile Include="ApiFeatures\BearmanLogsCommand.cs"/>
+        <Compile Include="ApiFeatures\LogManager.cs"/>
+        <Compile Include="Config.cs"/>
+        <Compile Include="EventHandler.cs"/>
+        <Compile Include="Features\Abilities\PlayEric.cs"/>
+        <Compile Include="Features\Abilities\PlayNoise.cs"/>
+        <Compile Include="Features\Abilities\PlayNotes.cs"/>
+        <Compile Include="Features\Scp066Role.cs"/>
         <Compile Include="Plugin.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
-        <Compile Include="VersionManager.cs" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Lib.Harmony" Version="2.4.2" />
-        <PackageReference Include="System.Net.Http" Version="4.3.4" />
-        <PackageReference Include="System.Text.Json" Version="10.0.1" />
+        <PackageReference Include="Lib.Harmony" Version="2.4.2"/>
+        <PackageReference Include="System.Net.Http" Version="4.3.4"/>
+        <PackageReference Include="System.Text.Json" Version="10.0.2"/>
+        <PackageReference Include="YamlDotNet" Version="11.0.1"/>
     </ItemGroup>
     <ItemGroup>
         <Content Include="../LICENSE" Link="LICENSE"/>
