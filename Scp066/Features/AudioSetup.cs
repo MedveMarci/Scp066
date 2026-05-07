@@ -62,7 +62,7 @@ internal static class AudioSetup
     /// Finds the audio folder under PathManager.Configs, handling case differences.
     /// Returns the path if it exists (renaming if case is wrong), or null if it doesn't exist at all.
     /// </summary>
-    private static string? ResolveAudioDirectory()
+    private static string ResolveAudioDirectory()
     {
         var configsPath = PathManager.Configs.FullName;
         var expectedPath = Path.Combine(configsPath, FolderName);
@@ -83,7 +83,7 @@ internal static class AudioSetup
         return expectedPath;
     }
 
-    private static void DownloadAndExtract(string? targetDir, string[] filesToExtract)
+    private static void DownloadAndExtract(string targetDir, string[] filesToExtract)
     {
         var downloadUrl = GetLatestAssetUrl();
         if (downloadUrl == null)
@@ -121,7 +121,7 @@ internal static class AudioSetup
         }
     }
 
-    private static string? GetLatestAssetUrl()
+    private static string GetLatestAssetUrl()
     {
         try
         {
