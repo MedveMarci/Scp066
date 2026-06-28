@@ -17,7 +17,7 @@ public class EventHandler : CustomEventsHandler
 
     public override void OnServerWaitingForPlayers()
     {
-        ApiManager.CheckForUpdates();
+        VersionManager.CheckForUpdates();
         base.OnServerWaitingForPlayers();
     }
 }
