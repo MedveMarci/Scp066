@@ -1,8 +1,6 @@
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using LabApi.Features.Wrappers;
-using LabApi.Loader.Features.Paths;
 using MEC;
 using PlayerRoles;
 using PlayerStatsSystem;
@@ -17,7 +15,7 @@ public class PlayNoise : AbilityBase
     public override string Description => "Plays Beethoven, which kills players";
     public override KeyCode DefaultKey => KeyCode.F;
     public override float Cooldown => 40f;
-    public override string SoundFile => Path.Combine(PathManager.Configs.FullName, "Scp066", "Beethoven.ogg");
+    public override string SoundResource => "Audio.Beethoven.ogg";
 
     protected override void OnExecute(AbilityExecutionContext context)
     {

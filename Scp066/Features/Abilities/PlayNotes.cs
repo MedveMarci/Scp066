@@ -1,5 +1,3 @@
-using System.IO;
-using LabApi.Loader.Features.Paths;
 using RoleAPI.API.Abilities;
 using UnityEngine;
 
@@ -16,6 +14,6 @@ public class PlayNotes : AbilityBase
     {
         context.LocksDuringExecution  = true;
         var value = Random.Range(0, 6) + 1;
-        context.SoundFile = Path.Combine(PathManager.Configs.FullName, "Scp066", $"Notes{value}.ogg");
+        context.SoundResource = $"Audio.Notes{value}.ogg";
     }
 }
