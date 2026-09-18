@@ -18,15 +18,25 @@ namespace Scp066.Features;
 public class Scp066Role : UcrRoleBase
 {
     [YamlIgnore] public override int Id { get; set; } = 066;
+
     [YamlIgnore] public override string Name { get; set; } = "SCP-066";
+
     [YamlIgnore] public override bool OverrideRoleName { get; set; } = true;
+
     public override string Nickname { get; set; } = null;
+
     public override string CustomInfo { get; set; } = "";
+
     public override string BadgeName { get; set; } = "";
+
     public override string BadgeColor { get; set; } = "";
+
     public override string SpawnHint { get; set; } = "";
+
     public override RoleTypeId Role { get; set; } = RoleTypeId.Scp0492;
+
     public override RoleTypeId RoleAppearance { get; set; } = RoleTypeId.Scp0492;
+
     public override List<Team> IsFriendOf { get; set; } = [];
 
     public override HealthBehaviour Health { get; set; } = new()
@@ -68,14 +78,14 @@ public class Scp066Role : UcrRoleBase
 
     public override bool CanEscape { get; set; } = false;
 
-    public override string SpawnBroadcast { get; set; } =
-        "<color=red>\ud83c\udfb5 You are SCP-066 - Eric's Toy \ud83c\udfb5\n" +
-        "Play sounds to kill humans\n" +
-        "Use abilities by clicking on the buttons</color>";
+    public override string SpawnBroadcast { get; set; } = "<color=red>\ud83c\udfb5 You are SCP-066 - Eric's Toy \ud83c\udfb5\n" + "Play sounds to kill humans\n" + "Use abilities by clicking on the buttons</color>";
 
     public override ushort SpawnBroadcastDuration { get; set; } = 10;
+
     [YamlIgnore] public override List<ItemType> Inventory { get; set; } = [];
+
     [YamlIgnore] public override Dictionary<ItemType, ushort> Ammo { get; set; } = [];
+
     [YamlIgnore] public override float DamageMultiplier { get; set; } = 0;
 
     public override SpawnBehaviour SpawnSettings { get; set; } = new()
@@ -92,15 +102,6 @@ public class Scp066Role : UcrRoleBase
         SpawnRoles = [RoleTypeId.Scp173]
     };
 
-    public override void OnSpawned(SummonedCustomRole role)
-    {
-        role.AddModule(
-            typeof(CustomScpAnnouncer),
-            new Dictionary<string, object> { { "name", "SCP-066" } }
-        );
-        base.OnSpawned(role);
-    }
-
     public override SpeakerSettings? DefaultSpeakerSettings { get; } = new SpeakerSettings
     {
         Volume = 1,
@@ -108,7 +109,7 @@ public class Scp066Role : UcrRoleBase
         MinDistance = 5f,
         MaxDistance = 5f
     };
-    
+
     public override RoleSchematic Schematic { get; } = new()
     {
         Name = "Scp066",
@@ -123,4 +124,10 @@ public class Scp066Role : UcrRoleBase
         new PlayNotes(),
         new PlayNoise()
     };
+
+    public override void OnSpawned(SummonedCustomRole role)
+    {
+        role.AddModule(typeof(CustomScpAnnouncer), new Dictionary<string, object> { { "name", "SCP-066" } });
+        base.OnSpawned(role);
+    }
 }
