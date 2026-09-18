@@ -6,6 +6,7 @@ namespace Scp066.ApiFeatures;
 internal static class LogManager
 {
     private static bool DebugEnabled => Scp066.Singleton?.Config.Debug ?? false;
+
     private static string PluginName => Scp066.Singleton?.Name ?? "Scp066";
 
     public static void Debug(string message)

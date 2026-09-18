@@ -6,22 +6,26 @@ using LabApi.Loader.Features.Paths;
 using LabApi.Loader.Features.Plugins;
 using RoleAPI.API.Audio;
 using Scp066.Features;
-using UncomplicatedCustomRoles.API.Features;
 
 namespace Scp066;
 
 public class Scp066 : Plugin<Config>
 {
     private readonly EventHandler _eventHandler = new();
+
     public override string Name => "Scp066";
 
     public override string Description =>
         "Adds SCP-066, the noise maker, as a custom role with unique abilities and features.";
 
     public override string Author => "RisottoMan, LabApi version: MedveMarci";
+
     public override Version Version => new(1, 3, 0);
+
     public override Version RequiredApiVersion { get; } = new(LabApiProperties.CompiledVersion);
+
     public static Scp066 Singleton { get; private set; }
+
     private Scp066Role Role { get; set; }
 
     public override void Enable()
@@ -35,7 +39,7 @@ public class Scp066 : Plugin<Config>
     /// Audio ships embedded in the DLL, but a file of the same name placed in the audio directory replaces it.
     private static void SetupAudioOverrides()
     {
-        var directory = Path.Combine(PathManager.Configs.FullName, "Scp066", "Audio");
+        string directory = Path.Combine(PathManager.Configs.FullName, "Scp066", "Audio");
         try
         {
             Directory.CreateDirectory(directory);

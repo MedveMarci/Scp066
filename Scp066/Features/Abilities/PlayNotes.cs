@@ -6,14 +6,17 @@ namespace Scp066.Features.Abilities;
 public class PlayNotes : AbilityBase
 {
     public override string Name => "\ud83c\udfb6 Note";
+
     public override string Description => "Play back random creepy notes";
+
     public override KeyCode DefaultKey => KeyCode.R;
+
     public override float Cooldown => 10f;
-    
+
     protected override void OnExecute(AbilityExecutionContext context)
     {
-        context.LocksDuringExecution  = true;
-        var value = Random.Range(0, 6) + 1;
+        context.LocksDuringExecution = true;
+        int value = Random.Range(0, 6) + 1;
         context.SoundResource = $"Audio.Notes{value}.ogg";
     }
 }
