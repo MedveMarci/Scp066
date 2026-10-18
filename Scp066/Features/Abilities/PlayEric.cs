@@ -1,4 +1,5 @@
 using RoleAPI.API.Abilities;
+using Scp066.ApiFeatures;
 using UnityEngine;
 
 namespace Scp066.Features.Abilities;
@@ -17,6 +18,6 @@ public class PlayEric : AbilityBase
     {
         context.LocksDuringExecution = true;
         int value = Random.Range(0, 3) + 1;
-        context.SoundResource = $"Audio.Eric{value}.ogg";
+        context.Sound = AudioManager.Get($"Eric{value}.ogg");
     }
 }
