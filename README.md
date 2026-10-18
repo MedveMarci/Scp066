@@ -41,9 +41,10 @@
 
 # Replacing the sounds
 
-The plugin creates `LabAPI/configs/Scp066/Audio/` on startup. Any file placed there replaces the built-in sound with the
-same name (`Beethoven.ogg`, `Eric1.ogg`-`Eric3.ogg`, `Notes1.ogg`-`Notes6.ogg`); anything missing from the folder is
-played from the DLL. No restart is needed after swapping a file.
+On startup the plugin saves its built-in sounds to `LabAPI/configs/Scp066/Audio/` (configurable with
+`audio_directory_path`). Files already in the folder are never overwritten. To use your own sound, replace a file with
+your own `.ogg` while keeping its name (`Beethoven.ogg`, `Eric1.ogg`-`Eric3.ogg`, `Notes1.ogg`-`Notes6.ogg`). Any sound missing from the folder is played from the DLL. No restart is
+needed after swapping a file.
 
 # Commands
 

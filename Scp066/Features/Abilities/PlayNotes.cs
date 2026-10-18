@@ -1,4 +1,5 @@
 using RoleAPI.API.Abilities;
+using Scp066.ApiFeatures;
 using UnityEngine;
 
 namespace Scp066.Features.Abilities;
@@ -17,6 +18,6 @@ public class PlayNotes : AbilityBase
     {
         context.LocksDuringExecution = true;
         int value = Random.Range(0, 6) + 1;
-        context.SoundResource = $"Audio.Notes{value}.ogg";
+        context.Sound = AudioManager.Get($"Notes{value}.ogg");
     }
 }

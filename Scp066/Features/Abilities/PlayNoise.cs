@@ -5,6 +5,8 @@ using MEC;
 using PlayerRoles;
 using PlayerStatsSystem;
 using RoleAPI.API.Abilities;
+using RoleAPI.API.Audio;
+using Scp066.ApiFeatures;
 using UnityEngine;
 
 namespace Scp066.Features.Abilities;
@@ -19,7 +21,7 @@ public class PlayNoise : AbilityBase
 
     public override float Cooldown => 40f;
 
-    public override string SoundResource => "Audio.Beethoven.ogg";
+    public override AbilityAudio Sound => AudioManager.Get("Beethoven.ogg");
 
     protected override void OnExecute(AbilityExecutionContext context)
     {
@@ -38,9 +40,6 @@ public class PlayNoise : AbilityBase
 
     private static IEnumerator<float> DamageLoop(AbilityExecutionContext context, float maxDistance, float damage, string damageText)
     {
-        // Brief wait for audio to start
-        yield return Timing.WaitForSeconds(0.2f);
-
         float elapsed = 0f;
         while (elapsed < 25f)
         {
