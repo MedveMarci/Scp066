@@ -8,6 +8,7 @@ using RoleAPI.API.Abilities;
 using RoleAPI.API.Audio;
 using Scp066.ApiFeatures;
 using UnityEngine;
+using YamlDotNet.Serialization;
 
 namespace Scp066.Features.Abilities;
 
@@ -21,8 +22,6 @@ public class PlayNoise : AbilityBase
 
     public override float Cooldown => 40f;
 
-    public override AbilityAudio Sound => AudioManager.Get("Beethoven.ogg");
-
     protected override void OnExecute(AbilityExecutionContext context)
     {
         float damage = Scp066.Singleton.Config.Damage;
@@ -33,6 +32,8 @@ public class PlayNoise : AbilityBase
             context.Deny("Invalid distance or damage configuration.");
             return;
         }
+        
+        context.Sound = AudioManager.Get("Beethoven.ogg");
 
         context.LocksDuringExecution = true;
         Timing.RunCoroutine(DamageLoop(context, maxDistance, damage, Scp066.Singleton.Config.CustomDeathText));

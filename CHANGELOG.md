@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.1]
+
+### Fixed
+
+- Fixed a bug where the plugin would throw and error if the `sound` config option was included in the config.
+
 ## [1.4.0]
 
 ### Added
@@ -7,7 +13,6 @@
 - The built-in sounds are saved to `LabAPI/configs/Scp066/Audio/` on startup. Files already there are never overwritten,
   so a sound can be replaced by putting your own `.ogg` there with the same name.
 - `audio_directory_path` config option to change where the sounds are saved and read from.
-- Release workflow that builds both `Scp066.dll` and `Scp066-RueI.dll`.
 
 ### Changed
 

@@ -18,7 +18,7 @@ public class Scp066 : Plugin<Config>
 
     public override string Author => "RisottoMan, LabApi version: MedveMarci";
 
-    public override Version Version => new(1, 4, 0);
+    public override Version Version => new(1, 4, 1);
 
     public override Version RequiredApiVersion { get; } = new(LabApiProperties.CompiledVersion);
 
